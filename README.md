@@ -5,19 +5,19 @@ This is the first time i have really used Github for something but i will try to
 
 ## Features
 
-Updater
-Credits
-Launch
-Exit
-Settings/Options
+- Updater
+- Credits
+- Launch
+- Exit
+- Settings/Options
 
 ## Credits
 
-Cats4Life - Channel
-ZPL - Art
-TWD98 - Art
-r00t1024 - Making Riivolution Buildable
-Aaron "AerialX", tueidj, Tempus, megazig - Riivolution
+- Cats4Life - Channel
+- ZPL - Art
+- TWD98 - Art
+- r00t1024 - Making Riivolution Buildable
+- Aaron "AerialX", tueidj, Tempus, megazig - Riivolution
 
 ## Dependencies
 
