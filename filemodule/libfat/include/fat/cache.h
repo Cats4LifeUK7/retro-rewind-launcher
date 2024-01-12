@@ -39,6 +39,8 @@
 #include "common.h"
 #include "disc.h"
 
+#define EVICTION_HISTORY 14
+
 typedef struct {
 	sec_t        sector;
 	unsigned int count;
@@ -48,12 +50,20 @@ typedef struct {
 } CACHE_ENTRY;
 
 typedef struct {
+	sec_t        sector;
+	unsigned int count;
+	unsigned int last_access;
+} EVICTION_ENTRY;
+
+typedef struct {
 	const DISC_INTERFACE* disc;
 	sec_t		          endOfPartition;
 	unsigned int          numberOfPages;
 	unsigned int          sectorsPerPage;
 	unsigned int          bytesPerSector;
+	unsigned int          bytesPerSectorLog;
 	CACHE_ENTRY*          cacheEntries;
+	EVICTION_ENTRY        evictions[EVICTION_HISTORY];
 } CACHE;
 
 /*

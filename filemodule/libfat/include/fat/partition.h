@@ -34,7 +34,6 @@
 #include "cache.h"
 #include "lock.h"
 
-#define MIN_SECTOR_SIZE     512
 #define MAX_SECTOR_SIZE     4096
 
 // Filesystem type
@@ -59,9 +58,11 @@ typedef struct {
 	uint32_t              rootDirCluster;
 	uint32_t              numberOfSectors;
 	sec_t                 dataStart;
-	uint32_t              bytesPerSector;
+	uint32_t              bytesPerSectorLog;
+	uint32_t              bytesPerSectorMask;
 	uint32_t              sectorsPerCluster;
-	uint32_t              bytesPerCluster;
+	uint32_t              bytesPerClusterLog;
+	uint32_t              bytesPerClusterMask;
 	uint32_t              fsInfoSector;
 	FAT                   fat;
 	// Values that may change after construction
